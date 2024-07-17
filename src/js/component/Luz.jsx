@@ -8,8 +8,16 @@ import { useState } from "react";
 const Luz = () => {
 	const [select, setSelect] = useState("")
 
-	let ChangeColor = (color) => {
+	function ChangeColor(color) {
 		setSelect(color)
+	}
+
+	function nextColor() {
+		select === "redLight"
+			? setSelect("yellowLight")
+			: select === "yellowLight"
+				? setSelect("greenLight")
+				: setSelect("redLight")
 	}
 
 
@@ -28,6 +36,8 @@ const Luz = () => {
 					onClick={() => ChangeColor("greenLight")}
 				></div>
 			</div>
+
+			<button className="btn" onClick={nextColor}>Siguiente Color</button>
 		</>
 	);
 };
