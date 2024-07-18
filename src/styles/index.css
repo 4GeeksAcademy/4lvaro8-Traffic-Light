@@ -1,8 +1,3 @@
-body {
-    justify-content: center;
-    display: flex;
-}
-
 #app {
     display: flex;
     flex-direction: column; 
@@ -10,7 +5,7 @@ body {
 
 .semaforoTop {
     width: 40px;
-    height: 200px;
+    height: 150px;
     background-color: black;
     align-self: center;
 }
@@ -22,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
     justify-content: space-between;
     border-radius: 30px;
 }
@@ -52,6 +48,13 @@ body {
     background-color: rgb(43, 194, 43);
 }
 
+.purpleLight {
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    background-color: rgb(115, 0, 150);
+}
+
 .lightR {
     box-shadow: 0px 0px 50px 20px rgb(255, 113, 113);
 }
@@ -62,4 +65,24 @@ body {
 
 .lightG {
     box-shadow: 0px 0px 50px 20px rgb(178, 255, 77);
+}
+
+.lightP {
+    box-shadow: 0px 0px 50px 20px rgb(179, 47, 255);
+}
+
+.buttons-container {
+    width: 400px;
+    align-self: center;
+    margin-top: 50px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.buttons-container > button {
+    width: 100px;
+    height: 60px;
+    background-color: rgb(61, 61, 61);
+    color: rgb(147, 233, 206);
+    border-radius: 10px;
 }
