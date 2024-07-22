@@ -1,5 +1,8 @@
+
+
 import React from "react";
 import { useState } from "react";
+
 
 
 
@@ -7,8 +10,15 @@ import { useState } from "react";
 //create your first component
 const Luz = () => {
 	const [select, setSelect] = useState("")
-	const [isOpened, setIsOpened] = useState(false);
-	let colores = ["red", "yellow", "green", "purple"];
+	const [opened, setOpened] = useState(false);
+
+	/** Cambia el color seleccionado
+	 * 
+	 * @param {color} string
+	 */
+	function ChangeColor(color) {
+		setSelect(color)
+	}
 
 
 	/** Alterna los colores del semáforo
@@ -25,27 +35,56 @@ const Luz = () => {
 	}
 
 
-
-	return (
+	return !opened ? (
 		<>
 			<div className="semaforo">
+				<div className={`red light ${select == "red" ? "active" : ""}`}
+					onClick={() => ChangeColor("red")}
+				></div>
 
-				<div className={`red light ${select == "red" ? "active" : ""}`} onClick={() => setSelect(colores[0])}></div>
+				<div className={`yellow light ${select == "yellow" ? "active" : ""}`}
+					onClick={() => ChangeColor("yellow")}
+				></div>
 
-				<div className={`yellow light ${select == "yellow" ? "active" : ""}`} onClick={() => setSelect(colores[1])}></div>
-
-				<div className={`green light ${select == "green" ? "active" : ""}`} onClick={() => setSelect(colores[2])}></div>
-
-				{isOpened && <div className={`purple light ${select == "purple" ? "active" : ""}`} onClick={() => setSelect(colores[3])}></div>}
-
+				<div className={`green light ${select == "green" ? "active" : ""}`}
+					onClick={() => ChangeColor("green")}
+				></div>
 			</div>
 
 			<div className="buttons-container">
 				<button className="btnAlternate" onClick={nextColor}>Siguiente Color</button>
-				<button className="btnPurple" onClick={() => setIsOpened(isOpened ? false : true)}>Semáforo morado</button>
+				<button className="btnPurple" onClick={() => setOpened(true)}>Semáforo morado</button>
+			</div>
+		</>
+	) : (
+		<>
+			<div className="semaforo">
+
+				<div className={`red light ${select == "red" ? "active" : ""}`}
+					onClick={() => ChangeColor("red")}
+				></div>
+
+				<div className={`yellow light ${select == "yellow" ? "active" : ""}`}
+					onClick={() => ChangeColor("yellow")}
+				></div>
+
+				<div className={`green light ${select == "green" ? "active" : ""}`}
+					onClick={() => ChangeColor("green")}
+				></div>
+
+				<div className={`purple light ${select == "purple" ? "active" : ""}`}
+					onClick={() => ChangeColor("purple")}
+				></div>
 			</div>
 
-			{isOpened && <div className="alert alert-info d-flex justify-content-center" role="alert"><strong>Cuidado!</strong> Que viene el morado.</div>}
+			<div className="buttons-container">
+				<button className="btnAlternate" onClick={nextColor}>Siguiente Color</button>
+				<button className="btnPurple" onClick={() => setOpened(false)}>Semáforo morado</button>
+			</div>
+
+			<div className="alert alert-info d-flex justify-content-center" role="alert">
+				<strong>Cuidado!</strong> Que viene el morado.
+			</div>
 
 		</>
 	);
