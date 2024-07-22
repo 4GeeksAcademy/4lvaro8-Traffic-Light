@@ -27,47 +27,42 @@
     margin: 10px 10px;
 }
 
-.redLight {
+.light {
     width: 180px;
     height: 180px;
-    border-radius: 180px;
+    border-radius: 100px;
+}
+
+.red {
+    
     background-color:rgb(155, 0, 0);
 }
 
-.yellowLight {
-    width: 180px;
-    height: 180px;
-    border-radius: 100px;
+.yellow {
     background-color:rgb(214, 164, 0);
 }
 
-.greenLight {
-    width: 180px;
-    height: 180px;
-    border-radius: 100px;
+.green {
     background-color: rgb(43, 194, 43);
 }
 
-.purpleLight {
-    width: 180px;
-    height: 180px;
-    border-radius: 100px;
+.purple {
     background-color: rgb(115, 0, 150);
 }
 
-.lightR {
+.light.red.active {
     box-shadow: 0px 0px 50px 20px rgb(255, 113, 113);
 }
 
-.lightY {
+.light.yellow.active {
     box-shadow: 0px 0px 50px 20px rgb(255, 236, 70);
 }
 
-.lightG {
+.light.green.active {
     box-shadow: 0px 0px 50px 20px rgb(178, 255, 77);
 }
 
-.lightP {
+.light.purple.active {
     box-shadow: 0px 0px 50px 20px rgb(179, 47, 255);
 }
 
