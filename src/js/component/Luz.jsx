@@ -3,23 +3,19 @@ import React, { useState } from "react";
 
 //create your first component
 const Luz = () => {
-	const [select, setSelect] = useState("")
+	const [select, setSelect] = useState("");
 	const [isOpened, setIsOpened] = useState(false);
 	let colors = ["red", "yellow", "green", "purple"]
 
 
-	/** Alterna los colores del semáforo
-	 * 
-	 */
-	function nextColor() {
-		select === colors[0]
-			? setSelect(colors[1])
-			: select === colors[1]
-				? setSelect(colors[2])
-				: select === (colors[2])
-					? setSelect(colors[3])
-					: setSelect(colors[0])
-	}
+/** Alterna los colores del semáforo
+ * 
+ */
+function nextColor() {
+	const currentIndex = colors.indexOf(select);
+	const nextIndex = (currentIndex + 1) % colors.length;
+	setSelect(colors[nextIndex]);
+}
 
 
 	return (
